@@ -1,10 +1,10 @@
 {
-  "name": "mathmagicians",
+  "name": "Marvel-Comic-App",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vite build",
     "preview": "vite preview"
   },
