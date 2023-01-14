@@ -5,41 +5,28 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Jokes from './Components/Jokes';
 import PokemonList from './Components/PokemonList';
+import PokemonDetails from './Components/PokemonDetails';
 import SecondPage from './Components/SecondPage';
 import Vibrant from './Components/Vibrant';
 import './index.css';
-import  store  from './redux/store';
+import store from './redux/store';
 
 const router = createBrowserRouter([
-  {
+ 
 
-    element: <App />,
+  {
     path: '/',
+    
     children: [
       {
-        index: false,
-        element: <SecondPage />,
-
+        index:true,
+        element: <PokemonList />,
       },
       {
-        index: true,
-        // path: '/two',
-        element: <Vibrant />,
+        path: ':name',
+        element: <PokemonDetails />,
       },
     ],
-  },
-
-  {
-    path: '/hey',
-    element: <Vibrant />,
-  },
-  {
-    path: '/jokes',
-    element: <Jokes />,
-  },
-  {
-    path: '/pokemon',
-    element: <PokemonList />,
   },
 
 ]);

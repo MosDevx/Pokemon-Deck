@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useGetPokemonByNameQuery } from '../redux/pokemonApi';
 
 const Pokemon = ({ name }) => {
@@ -14,6 +15,7 @@ const Pokemon = ({ name }) => {
   <>
     <img className="w-48 h-48" src={data.image} alt={name} />
     <h3>{name}</h3>
+		<Link to={`${name}`}   >See Details</Link>
 
   </>
 				) : null
