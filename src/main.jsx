@@ -10,12 +10,13 @@ import SecondPage from './Components/SecondPage';
 import Vibrant from './Components/Vibrant';
 import './index.css';
 import store from './redux/store';
-
+import MainLayout from './Components/MainLayout';
 const router = createBrowserRouter([
  
 
   {
     path: '/',
+    element: <MainLayout/>,
     
     children: [
       {
