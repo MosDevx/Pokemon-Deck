@@ -12,7 +12,7 @@ const PokemonDetails = () => {
   };
 
   return (
-    <div className='container bg-red-300 h-screen m-auto'>
+    <div className='container bg-slate-100 h-screen m-auto'>
       <button onClick={handleGoBackClick} className="font-bold text-2xl border-1 p-1">Go Back</button>
     
 		  <div className='border-2 w-80 h-max flex flex-col items-center m-auto mt-10 bg-yellow-300'>

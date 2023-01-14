@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useGetPokemonByNameQuery } from '../redux/pokemonApi';
+import PropTypes from 'prop-types'
 
 
 const Pokemon = ({ name }) => {
@@ -11,7 +12,7 @@ const Pokemon = ({ name }) => {
 		navigate(`${name}`, {state: data})
 	}
   return (
-    <div className='w-56 flex flex-col  items-center h-56 bg-yellow-300 ' onClick={handleCardClicked}>
+    <div className='w-56 flex flex-col  items-center h-56 bg-yellow-300 hover:bg-yellow-400 ' onClick={handleCardClicked}>
       {
 				error ? (
   <p>Woopsie, an error occured</p>
@@ -31,5 +32,10 @@ const Pokemon = ({ name }) => {
     </div>
   );
 };
+
+
+Pokemon.propTypes ={
+	name:PropTypes.string
+}
 
 export default Pokemon;

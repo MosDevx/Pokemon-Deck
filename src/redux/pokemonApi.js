@@ -1,18 +1,31 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import {
+  createApi,
+  fetchBaseQuery
+} from '@reduxjs/toolkit/query/react';
 
 export const pokemonApi = createApi({
   reducerPath: 'pokemonApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2/' }),
-	keepUnusedDataFor:60*60*60,
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://pokeapi.co/api/v2/'
+  }),
+  keepUnusedDataFor: 60 * 60 * 60,
   endpoints: (builder) => ({
     getPokemonByName: builder.query({
       query: (name) => `pokemon/${name}`,
       transformResponse: (response) => {
         const {
-          name,abilities, base_experience: xp, height, weight, sprites: { front_shiny: image }, types,
+          name,
+          abilities,
+          base_experience: xp,
+          height,
+          weight,
+          sprites: {
+            front_shiny: image
+          },
+          types,
         } = response;
         return {
-					name,
+          name,
           abilities,
           xp,
           height,
@@ -27,7 +40,7 @@ export const pokemonApi = createApi({
       query: () => ({
         url: 'pokemon',
         params: {
-          limit: 25,
+          limit: 30,
         },
       }),
       transformResponse: (response) => {
@@ -39,4 +52,7 @@ export const pokemonApi = createApi({
 
 });
 
-export const { useGetPokemonByNameQuery, useGetListOfPokemonQuery } = pokemonApi;
+export const {
+  useGetPokemonByNameQuery,
+  useGetListOfPokemonQuery
+} = pokemonApi;

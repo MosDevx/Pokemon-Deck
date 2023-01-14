@@ -5,11 +5,10 @@ import { pokemonApi } from './pokemonApi';
 
 const store = configureStore({
   reducer: {
-    [jokesApi.reducerPath]: jokesApi.reducer,
+    
     [pokemonApi.reducerPath]: pokemonApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(jokesApi.middleware)
-    .concat(pokemonApi.middleware),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(pokemonApi.middleware),
 });
 
 setupListeners(store.dispatch);
