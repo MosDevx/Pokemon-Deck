@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import Jokes from './Components/Jokes';
-import Pokemon from './Components/Pokemon';
+import PokemonList from './Components/PokemonList';
 import SecondPage from './Components/SecondPage';
 import Vibrant from './Components/Vibrant';
 import './index.css';
-import { store } from './redux/store';
+import  store  from './redux/store';
 
 const router = createBrowserRouter([
   {
@@ -38,9 +38,9 @@ const router = createBrowserRouter([
     element: <Jokes />,
   },
   {
-    path:'/pokemon',
-    element:<Pokemon/>
-  }
+    path: '/pokemon',
+    element: <PokemonList />,
+  },
 
 ]);
 

@@ -6,8 +6,7 @@ export const pokemonApi = createApi({
   endpoints: (builder) => ({
     getPokemonByName: builder.query({
       query: (name) => `pokemon/${name}`,
-      transformResponse: (response, meta, arg) => {
-        console.log(response);
+      transformResponse: (response) => {
         const {
           abilities, base_experience: xp, height, weight, sprites: { front_shiny: image }, types,
         } = response;
@@ -29,6 +28,10 @@ export const pokemonApi = createApi({
           limit: 25,
         },
       }),
+      transformResponse: (response) => {
+        const nameList = response.results.map((pokemon) => pokemon.name);
+        return nameList;
+      },
     }),
   }),
 

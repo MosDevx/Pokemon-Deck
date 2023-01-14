@@ -10,7 +10,7 @@ export const jokesApi = createApi({
       query: (type) => `${type}/random`,
     }),
     getRandomJoke: builder.query({
-      query: () => `random`,
+      query: () => 'random',
     }),
   }),
 });
