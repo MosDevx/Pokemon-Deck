@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Vibrant from './assets/Components/Vibrant'
+import Vibrant from './Components/Vibrant'
 
 
 function App() {
