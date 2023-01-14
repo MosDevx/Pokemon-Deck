@@ -43,7 +43,8 @@ export const pokemonApi = createApi({
           limit: 30,
         },
       }),
-      transformResponse: (response) => {
+      transformResponse: (response,meta) => {
+        console.log("metta",meta)
         const nameList = response.results.map((pokemon) => pokemon.name);
         return nameList;
       },

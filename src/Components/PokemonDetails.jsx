@@ -5,7 +5,7 @@ const PokemonDetails = () => {
   const location = useLocation();
   const data = location.state;
   const navigate = useNavigate();
-	console.log(data.types)
+
 
   const handleGoBackClick = () => {
     navigate(-1);
