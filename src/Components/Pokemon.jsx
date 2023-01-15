@@ -18,7 +18,7 @@ const Pokemon = ({ name ,type}) => {
     return <div>Data is loading</div>;
   } if (data) {
     if (type === 'All' || data.types[0].type.name === type) return (
-      <div className="w-56 flex flex-col  items-center h-56 bg-yellow-300 hover:bg-yellow-400 " onClick={handleCardClicked}>
+      <div className="w-56 flex flex-col border-2 border-yellow-400  items-center h-56 bg-yellow-300 hover:bg-yellow-400 " onClick={handleCardClicked}>
         <>
           <img className="w-40 h-40" src={data.image} alt={name} />
           <h3 className="capitalize font-bold text-xl">{name}</h3>

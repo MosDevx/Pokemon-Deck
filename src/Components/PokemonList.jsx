@@ -12,7 +12,7 @@ const PokemonList = () => {
 
   return (
     <div>
-      <div className="flex w-full justify-around h-10 my-2">
+      <div className="flex w-4/6 m-auto justify-around h-10 my-2">
         <button className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white " onClick={() => changeType('All')}>All</button>
         <button  className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "  onClick={() => changeType('water')}>Water</button>
         <button className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "   onClick={() => changeType('fire')}>Fire</button>
@@ -25,7 +25,7 @@ const PokemonList = () => {
 
       </div>
 
-      <div className="m-auto p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center  bg-slate-100 grid gap-6 container border-2 w-screen">
+      <div className="m-auto p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center  bg-slate-100 grid  container border-2 w-max">
 
         {isLoading ? (<div>Data is Loading</div>)
 			  : data ? (
