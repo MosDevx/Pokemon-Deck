@@ -1,42 +1,42 @@
-import React, { useState } from 'react'
-import { useGetListOfPokemonQuery } from '../redux/pokemonApi'
-import Pokemon from './Pokemon'
-
-
+import React, { useState } from 'react';
+import { useGetListOfPokemonQuery } from '../redux/pokemonApi';
+import Pokemon from './Pokemon';
 
 const PokemonList = () => {
-	const {data,error,isLoading} =useGetListOfPokemonQuery()
-	const [type, setType] = useState("all")
+  const { data, error, isLoading } = useGetListOfPokemonQuery();
+  const [type, setType] = useState('All');
 
-	const changeType=(type)=>{
-		setType(type)
-	}
+  const changeType = (type) => {
+    setType(type);
+  };
 
-	return (
-		<div>
-			{/* <div className='flex'>
-					<button onClick={()=>changeType('all')}>All</button>
-					<button onClick={()=>changeType('water')}>Water</button>
-					<button onClick={()=>changeType('fire')}>Fire</button>
+  return (
+    <div>
+      <div className="flex w-full justify-around h-10 my-2">
+        <button className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white " onClick={() => changeType('All')}>All</button>
+        <button  className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "  onClick={() => changeType('water')}>Water</button>
+        <button className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "   onClick={() => changeType('fire')}>Fire</button>
+        <button  className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "  onClick={() => changeType('normal')}>Normal</button>
+        <button  className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "  onClick={() => changeType('electric')}>Electric</button>
+        <button  className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "  onClick={() => changeType('grass')}>Grass</button>
+        <button  className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "  onClick={() => changeType('bug')}>Bug</button>
+        <button className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "   onClick={() => changeType('poison')}>Poison</button>
+        <button className="border-2 px-2 py-0 rounded-md font-semibold border-slate-300 hover:bg-sky-400 hover:text-white "   onClick={() => changeType('ground')}>Ground</button>
 
-			</div> */}
-		
-		<div className='m-auto p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center  bg-slate-100 grid gap-6 container border-2 w-screen'>
-			
-			{isLoading ? (<div>Data is Loading</div>)
-			: data ? (
-				
-				data.map((name)=>{
-					return <Pokemon key={name} name={name}></Pokemon>
-				})
-			)	: null
-		}
+      </div>
 
+      <div className="m-auto p-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center  bg-slate-100 grid gap-6 container border-2 w-screen">
 
-		</div>
+        {isLoading ? (<div>Data is Loading</div>)
+			  : data ? (
 
-		</div>
-	)
-}
+			    data.map((name) => <Pokemon key={name} name={name} type={type} />)
+			  )	: null}
 
-export default PokemonList
+      </div>
+
+    </div>
+  );
+};
+
+export default PokemonList;
