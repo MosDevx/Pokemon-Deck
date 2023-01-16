@@ -228,10 +228,8 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
+I would like to thank
+["Ballhead App"](https://www.behance.net/gallery/31579789/Ballhead-App-(Free-PSDs)) by [Nelson Sakwa](https://www.behance.net/sakwadesignstudio) is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) for Project design Guidline
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
