@@ -11,13 +11,13 @@ import Vibrant from './Components/Vibrant';
 import './index.css';
 import store from './redux/store';
 import MainLayout from './Components/MainLayout';
-import LoctionTest from './Components/LoctionTest';
+import LocationTest from './Components/LocationTest';
 const router = createBrowserRouter([
  
 
   {
     path: '/',
-    element: <MainLayout/>,
+    element: <LocationTest/>,
     
     // children: [
     //   {
