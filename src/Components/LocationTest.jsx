@@ -1,26 +1,45 @@
-import { useEffect, useState } from "react";
+import React, { useState } from 'react';
 
+function LocationTest() {
+  const [latitude, setLatitude] = useState(null);
+  const [longitude, setLongitude] = useState(null);
+  const [error, setError] = useState(null);
 
-function LocationTest(){
+  const handleGetLocation = () => {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const newLatitude = position.coords.latitude;
+          const newLongitude = position.coords.longitude;
+          setLatitude(newLatitude);
+          setLongitude(newLongitude);
+          setError(null);
+        },
+        (error) => {
+          setError(error.message);
+        }
+      );
+    } else {
+      setError("Geolocation is not supported in this browser.");
+    }
+  };
 
-let [location, setLocation] = useState({})
+  return (
+    <div>
+      <h1>Location App</h1>
+      <p>Click the button to get your current location:</p>
+      <button onClick={handleGetLocation}>Get Location</button>
 
-useEffect(()=>{
-	navigator.geolocation.getCurrentPosition((position)=>{
-		setLocation(position)
-	})
-},[])
+      {latitude !== null && longitude !== null && (
+        <div>
+          <p>Latitude: {latitude}</p>
+          <p>Longitude: {longitude}</p>
+        </div>
+      )}
 
-
-
-return(
-		<div>
-			<h1>Location Test</h1>
-			<p>Latitude: {location.coords?.latitude}</p>
-			<p>Longitude: {location.coords?.longitude}</p>
-		</div>
-	)
-
+      {error && <p>Error: {error}</p>}
+    </div>
+  );
 }
 
 export default LocationTest;
