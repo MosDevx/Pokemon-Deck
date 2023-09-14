@@ -11,6 +11,7 @@ import Vibrant from './Components/Vibrant';
 import './index.css';
 import store from './redux/store';
 import MainLayout from './Components/MainLayout';
+import LoctionTest from './Components/LoctionTest';
 const router = createBrowserRouter([
  
 
@@ -18,16 +19,16 @@ const router = createBrowserRouter([
     path: '/',
     element: <MainLayout/>,
     
-    children: [
-      {
-        index:true,
-        element: <PokemonList />,
-      },
-      {
-        path: ':name',
-        element: <PokemonDetails />,
-      },
-    ],
+    // children: [
+    //   {
+    //     index:true,
+    //     element: <PokemonList />,
+    //   },
+    //   {
+    //     path: ':name',
+    //     element: <PokemonDetails />,
+    //   },
+    // ],
   },
 
 ]);
