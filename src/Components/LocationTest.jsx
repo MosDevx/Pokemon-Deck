@@ -17,6 +17,14 @@ function LocationTest() {
         },
         (error) => {
           setError(error.message);
+          if (error.code === error.PERMISSION_DENIED) {
+            // Permission denied, show an alert
+            alert("Location access denied. Please enable location services in your browser settings.");
+          }
+          if (error.code === error.POSITION_UNAVAILABLE) {
+            // Location services are turned off, show an alert
+            alert("Location services are turned off. Please enable location services in your device settings.");
+          }
         }
       );
     } else {
